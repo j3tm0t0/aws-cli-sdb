@@ -26,3 +26,7 @@ TODO
 * ~~ListDomains~~ done
 * PutAttributes
 * Select
+
+
+ WSDL
+ http://sdb.amazonaws.com/doc/2009-04-15/AmazonSimpleDB.wsdl
