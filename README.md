@@ -16,16 +16,16 @@ $ aws sdb list-domains --output json
 
 TODO
 
-* BatchDeleteAttributes
-* BatchPutAttributes
-* CreateDomain
-* DeleteAttributes
-* DeleteDomain
-* DomainMetadata
-* GetAttributes
+* ~~BatchDeleteAttributes~~ done
+* ~~BatchPutAttributes~~ done
+* ~~CreateDomain~~ done
+* ~~DeleteAttributes~~ done
+* ~~DeleteDomain~~ done
+* ~~DomainMetadata~~ done
+* ~~GetAttributes~~ done
 * ~~ListDomains~~ done
-* PutAttributes
-* Select
+* ~~PutAttributes~~ done
+* ~~Select~~ done
 
 
  WSDL
