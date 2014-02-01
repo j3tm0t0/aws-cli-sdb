@@ -12,7 +12,9 @@ aws sdb get-attributes --domain-name $domain --item-name item0 --consistent-read
 
 aws sdb batch-put-attributes --domain-name $domain --items '[{"Name":"item1","Attributes":[{"Name":"attr1","Value":"value1"}]},{"Name":"item2","Attributes":[{"Name":"attr2","Value":"value2"}]}]'
 
-aws sdb select --select-expression "select * from $domain limit 1" | tee /dev/stderr | jq .NextToken | xargs aws --debug sdb select --select-expression "select * from $domain limit 1" --next-token
+aws sdb select --select-expression "select * from $domain limit 1" | tee /dev/stderr | jq -r .NextToken > token
+aws sdb select --select-expression "select * from $domain limit 1" --next-token file://token
+rm token
 
 aws sdb delete-attributes --domain-name $domain --item-name item0
 aws sdb batch-delete-attributes --domain-name $domain --items '[{"Name":"item1","Attributes":[{"Name":"attr1","Value":"value1"}]},{"Name":"item2","Attributes":[{"Name":"attr2","Value":"value2"}]}]'
